@@ -27,18 +27,15 @@ public abstract class Conta {
 
         if (verificaSaldo(valor, c1)) {
             c1.setSaldo(c1.getSaldo() - valor);
-            c2.setSaldo(valor);
+            c2.setSaldo(c2.getSaldo() + valor);
         } else {
             System.out.println("Saldo insuficiente!");
         }
 
     }
 
-    public boolean verificaSaldo(double valor, Conta c1) {
-
-        System.out.println("Saldo: " + c1.getSaldo());
-
-        if (c1.getSaldo() > valor) {
+    public boolean verificaSaldo(double valor, Conta c) {
+        if (c.getSaldo() > valor) {
             return true;
         }
         return false;

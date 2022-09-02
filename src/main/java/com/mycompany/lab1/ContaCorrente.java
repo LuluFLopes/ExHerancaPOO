@@ -4,7 +4,7 @@ package com.mycompany.lab1;
  *
  * @author luciano.flopes
  */
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Extrato {
 
     public ContaCorrente(String nomeCliente, int numConta, int numAgencia) {
         super(nomeCliente, numConta, numAgencia);
@@ -24,6 +24,11 @@ public class ContaCorrente extends Conta {
     @Override
     public boolean verificaSaldo(double valor, Conta c1) {
         return super.verificaSaldo(valor, c1);
+    }
+
+    @Override
+    public void extrato(Conta c) {
+        System.out.println("Saldo: " + c.getSaldo() + ", Titular: " + c.getNomeCliente());
     }
 
 }
